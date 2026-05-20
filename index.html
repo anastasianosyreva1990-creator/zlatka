@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ЗЛАТКА — Кокошники оптом от производителя</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --marsala: #872934;
+  --marsala-light: #A8404E;
+  --marsala-pale: #F5EAEC;
+  --olive: #5C6E30;
+  --olive-light: #7A8E45;
+  --olive-pale: #EEF0E6;
+  --gold: #BEA268;
+  --gold-light: #D4BC8A;
+  --gold-pale: #F8F3E8;
+  --beige: #E8E2D8;
+  --cream: #FAF8F4;
+  --white: #FFFFFF;
+  --dark: #1C1610;
+  --text: #2A2018;
+  --text-muted: #8A8070;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Inter',sans-serif; background:var(--cream); color:var(--text); overflow-x:hidden; }
+
+/* ── HERO ── */
+.hero {
+  min-height:100vh;
+  background:var(--cream);
+  display:flex; align-items:center;
+  position:relative; overflow:hidden;
+  border-bottom:1px solid var(--beige);
+}
+.hero-deco-line-left {
+  position:absolute; left:40px; top:0; bottom:0; width:1px;
+  background:linear-gradient(to bottom, transparent, var(--gold), transparent);
+  opacity:0.5;
+}
+.hero-deco-line-right {
+  position:absolute; right:40px; top:0; bottom:0; width:1px;
+  background:linear-gradient(to bottom, transparent, var(--gold), transparent);
+  opacity:0.5;
+}
+.hero-layout {
+  max-width:1160px; margin:0 auto; padding:80px 80px;
+  display:grid; grid-template-columns:1fr 420px;
+  gap:80px; align-items:center; width:100%;
+}
+.hero-eyebrow {
+  display:inline-flex; align-items:center; gap:14px; margin-bottom:28px;
+}
+.eyebrow-line { width:32px; height:1px; background:var(--gold); }
+.eyebrow-text {
+  font-size:10px; font-weight:600; letter-spacing:4px;
+  text-transform:uppercase; color:var(--gold);
+}
+.hero-title {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(72px,10vw,128px);
+  font-weight:900; color:var(--dark);
+  line-height:0.88; letter-spacing:-4px;
+  margin-bottom:16px;
+}
+.hero-title span { color:var(--marsala); }
+.hero-sub {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(15px,2vw,20px); font-style:italic;
+  color:var(--text-muted); letter-spacing:2px;
+  margin-bottom:32px;
+}
+.hero-desc {
+  font-size:15px; color:var(--text-muted);
+  line-height:1.85; max-width:480px;
+  font-weight:300; margin-bottom:48px;
+}
+.hero-btns { display:flex; gap:14px; flex-wrap:wrap; }
+
+.btn-marsala {
+  display:inline-block; background:var(--marsala);
+  color:white; font-size:11px; font-weight:600;
+  letter-spacing:2.5px; text-transform:uppercase;
+  padding:15px 34px; text-decoration:none; transition:all 0.3s;
+}
+.btn-marsala:hover { background:var(--marsala-light); transform:translateY(-2px); }
+
+.btn-outline {
+  display:inline-block;
+  border:1px solid var(--beige);
+  color:var(--text-muted); font-size:11px; font-weight:500;
+  letter-spacing:2.5px; text-transform:uppercase;
+  padding:15px 34px; text-decoration:none; transition:all 0.3s;
+}
+.btn-outline:hover { border-color:var(--gold); color:var(--dark); }
+
+/* Hero image */
+.hero-image-wrap {
+  position:relative;
+}
+.hero-image-frame {
+  position:relative;
+  background:var(--beige);
+  aspect-ratio:3/4;
+  overflow:hidden;
+}
+.hero-image-frame::before {
+  content:'';
+  position:absolute; inset:12px;
+  border:1px solid rgba(190,162,104,0.3);
+  z-index:2; pointer-events:none;
+}
+/* ===== ЗАМЕНИТЕ ФОТО ЗДЕСЬ =====
+   Загрузите фото в репозиторий GitHub,
+   затем замените строку ниже:
+   src="НАЗВАНИЕ_ВАШЕГО_ФАЙЛА.jpg"
+   Например: src="kokoshnik_main.jpg"
+*/
+.hero-image-frame img {
+  width:100%; height:100%;
+  object-fit:cover; display:block;
+}
+.hero-image-placeholder {
+  width:100%; height:100%; min-height:420px;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  gap:16px; padding:40px; text-align:center;
+  background:var(--gold-pale);
+}
+.placeholder-icon { font-size:48px; opacity:0.3; }
+.placeholder-text {
+  font-size:12px; color:var(--text-muted);
+  line-height:1.7; opacity:0.7;
+}
+.placeholder-code {
+  font-family:monospace; font-size:11px;
+  background:var(--beige); padding:8px 14px;
+  color:var(--marsala); border-radius:2px;
+}
+.hero-image-corner {
+  position:absolute; bottom:-12px; right:-12px;
+  width:80px; height:80px;
+  background:var(--marsala-pale);
+  border:1px solid rgba(135,41,52,0.15);
+  display:flex; align-items:center; justify-content:center;
+  flex-direction:column; gap:2px;
+}
+.corner-num {
+  font-family:'Playfair Display',serif;
+  font-size:22px; font-weight:900; color:var(--marsala); line-height:1;
+}
+.corner-label { font-size:8px; letter-spacing:1px; color:var(--text-muted); text-transform:uppercase; }
+
+/* ── STRIP ── */
+.strip {
+  background:var(--marsala); padding:12px 0;
+  overflow:hidden; position:relative;
+}
+.strip-inner {
+  display:flex; white-space:nowrap;
+  animation:marquee 30s linear infinite;
+}
+.strip-item {
+  font-size:10px; font-weight:600; letter-spacing:3px;
+  text-transform:uppercase; color:rgba(255,255,255,0.85);
+  padding:0 28px; flex-shrink:0;
+}
+.strip-gem { color:rgba(255,220,150,0.7); }
+
+/* ── SECTIONS ── */
+section { padding:96px 24px; }
+.container { max-width:1100px; margin:0 auto; }
+
+.s-label {
+  font-size:9px; font-weight:700; letter-spacing:4px;
+  text-transform:uppercase; color:var(--gold);
+  margin-bottom:14px; display:flex; align-items:center; gap:12px;
+}
+.s-label::before { content:''; width:28px; height:1px; background:var(--gold); }
+
+.s-title {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(30px,4.5vw,50px);
+  font-weight:700; line-height:1.1; margin-bottom:20px; color:var(--dark);
+}
+.s-title em { font-style:italic; color:var(--marsala); }
+
+/* ── GALLERY ── */
+.gallery { background:var(--white); }
+.gallery-intro {
+  font-size:15px; color:var(--text-muted);
+  max-width:520px; line-height:1.85;
+  margin-bottom:52px; font-weight:300;
+}
+.gallery-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+.g-item {
+  position:relative; overflow:hidden;
+  background:var(--gold-pale);
+  aspect-ratio:2/3;
+  cursor:pointer;
+}
+.g-item:first-child { grid-column:span 2; aspect-ratio:auto; min-height:380px; }
+/* ===== КАК ДОБАВИТЬ ФОТО В ГАЛЕРЕЮ =====
+   1. Загрузите фото в репозиторий GitHub
+   2. Найдите нужный g-item
+   3. Удалите div.g-placeholder
+   4. Вставьте: <img src="имя_файла.jpg" alt="Модель">
+*/
+.g-placeholder {
+  width:100%; height:100%; min-height:200px;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  gap:10px; border:1.5px dashed rgba(190,162,104,0.35);
+  transition:all 0.3s; padding:16px; text-align:center;
+}
+.g-item:hover .g-placeholder { border-color:var(--gold); background:rgba(190,162,104,0.08); }
+.g-placeholder span { font-size:28px; opacity:0.3; }
+.g-placeholder p { font-size:10px; color:var(--text-muted); opacity:0.6; letter-spacing:1px; }
+.g-item img { width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.5s; }
+.g-item:hover img { transform:scale(1.04); }
+.g-label {
+  position:absolute; bottom:0; left:0; right:0;
+  background:linear-gradient(to top, rgba(28,22,16,0.7), transparent);
+  padding:20px 14px 12px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:15px; color:white; font-weight:600;
+  opacity:0; transition:opacity 0.3s;
+}
+.g-item:hover .g-label { opacity:1; }
+.gallery-hint {
+  margin-top:20px; font-size:12px; color:var(--text-muted);
+  display:flex; align-items:center; gap:10px;
+}
+.gallery-hint::before { content:''; width:20px; height:1px; background:var(--gold); opacity:0.6; }
+
+/* ── CULTURE ── */
+.culture { background:var(--olive-pale); }
+.culture-grid {
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:12px; margin-top:52px;
+}
+.c-card {
+  background:var(--white);
+  padding:28px 22px;
+  border-top:3px solid var(--olive-light);
+  transition:border-color 0.3s, box-shadow 0.3s;
+}
+.c-card:hover { border-top-color:var(--marsala); box-shadow:0 4px 24px rgba(0,0,0,0.06); }
+.c-icon { font-size:24px; margin-bottom:12px; display:block; }
+.c-name {
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px; font-weight:600;
+  color:var(--dark); margin-bottom:8px;
+}
+.c-text { font-size:13px; color:var(--text-muted); line-height:1.7; }
+
+/* ── PRICING ── */
+.pricing { background:var(--marsala); }
+.pricing .s-label { color:rgba(255,220,150,0.8); }
+.pricing .s-label::before { background:rgba(255,220,150,0.6); }
+.pricing .s-title { color:white; }
+.pricing .s-title em { color:rgba(255,220,150,0.9); font-style:italic; }
+
+.pricing-layout {
+  display:grid; grid-template-columns:280px 1fr;
+  gap:80px; align-items:start; margin-top:52px;
+}
+.pricing-side p {
+  font-size:15px; color:rgba(255,255,255,0.6);
+  line-height:1.85; margin-bottom:14px; font-weight:300;
+}
+.pricing-side strong { color:rgba(255,220,150,0.9); font-weight:600; }
+
+.p-cards { display:flex; flex-direction:column; gap:2px; }
+.p-card {
+  background:rgba(255,255,255,0.1);
+  display:grid; grid-template-columns:160px 1fr auto;
+  align-items:center; gap:24px;
+  padding:24px 32px;
+  border-left:3px solid transparent;
+  transition:all 0.3s;
+}
+.p-card:hover { background:rgba(255,255,255,0.15); border-left-color:var(--gold-light); }
+.p-card.featured {
+  background:rgba(255,255,255,0.18);
+  border-left-color:var(--gold-light);
+}
+.p-vol {
+  font-size:13px; color:rgba(255,255,255,0.55);
+}
+.p-vol strong {
+  display:block; font-size:16px;
+  color:white; font-family:'Inter',sans-serif; font-weight:600;
+}
+.p-tier {
+  font-size:10px; letter-spacing:2px;
+  text-transform:uppercase; color:rgba(255,255,255,0.4);
+}
+.p-popular {
+  display:inline-block; background:var(--gold-light);
+  color:var(--dark); font-size:8px; font-weight:700;
+  letter-spacing:2px; text-transform:uppercase;
+  padding:3px 10px; margin-bottom:5px;
+}
+.p-price {
+  font-family:'Playfair Display',serif;
+  font-size:42px; font-weight:900;
+  color:white; line-height:1;
+  text-align:right; white-space:nowrap;
+}
+.p-price span { font-size:14px; font-weight:300; color:rgba(255,255,255,0.6); }
+
+/* ── CLIENTS ── */
+.clients { background:var(--cream); }
+.clients-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:12px; margin-top:52px;
+}
+.cl-item {
+  background:var(--white); padding:28px 24px;
+  border-bottom:3px solid transparent; transition:all 0.3s;
+}
+.cl-item:hover { border-bottom-color:var(--marsala); box-shadow:0 4px 20px rgba(0,0,0,0.05); }
+.cl-icon { font-size:24px; margin-bottom:12px; display:block; }
+.cl-name {
+  font-family:'Cormorant Garamond',serif;
+  font-size:19px; font-weight:600; color:var(--dark); margin-bottom:6px;
+}
+.cl-desc { font-size:13px; color:var(--text-muted); line-height:1.65; }
+
+/* ── ABOUT ── */
+.about { background:var(--white); }
+.about-layout {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:80px; align-items:center; margin-top:52px;
+}
+.about-text p {
+  font-size:15px; color:var(--text-muted);
+  line-height:1.85; margin-bottom:16px; font-weight:300;
+}
+.about-list { margin-top:24px; display:flex; flex-direction:column; gap:12px; }
+.about-li {
+  display:flex; align-items:flex-start; gap:12px;
+  font-size:14px; color:var(--text);
+}
+.about-li::before {
+  content:'◆'; color:var(--gold); font-size:7px;
+  margin-top:6px; flex-shrink:0;
+}
+.stats-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
+.stat {
+  background:var(--cream); padding:32px 28px;
+  border-bottom:3px solid transparent; transition:border-color 0.3s;
+}
+.stat:hover { border-bottom-color:var(--marsala); }
+.stat-num {
+  font-family:'Playfair Display',serif;
+  font-size:52px; font-weight:900;
+  color:var(--marsala); line-height:1; margin-bottom:6px;
+}
+.stat-label {
+  font-size:11px; text-transform:uppercase;
+  letter-spacing:1.5px; color:var(--text-muted);
+}
+
+/* ── CONTACT ── */
+.contact { background:var(--marsala); color:white; text-align:center; }
+.contact .s-label { justify-content:center; color:rgba(255,220,150,0.8); }
+.contact .s-label::before { display:none; }
+.contact .s-title { color:white; }
+.contact .s-title em { color:rgba(255,220,150,0.9); }
+.contact-grid {
+  display:flex; justify-content:center;
+  gap:2px; flex-wrap:wrap; margin-top:52px;
+}
+.ct-card {
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.15);
+  padding:32px 44px; min-width:210px; transition:all 0.3s;
+}
+.ct-card:hover { border-color:rgba(255,220,150,0.6); background:rgba(255,255,255,0.15); }
+.ct-icon { font-size:20px; margin-bottom:12px; display:block; }
+.ct-label { font-size:9px; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:8px; }
+.ct-value { font-family:'Cormorant Garamond',serif; font-size:19px; font-weight:600; color:rgba(255,220,150,0.95); }
+.contact-note { margin-top:44px; font-size:12px; color:rgba(255,255,255,0.45); line-height:2; }
+
+/* ── FOOTER ── */
+footer { background:#5C1A22; padding:20px; text-align:center; }
+footer p { font-size:10px; color:rgba(255,255,255,0.15); letter-spacing:1px; }
+
+/* ── ANIMATIONS ── */
+@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px) {
+  .hero-layout { grid-template-columns:1fr; padding:60px 24px; }
+  .hero-image-wrap { max-width:360px; margin:0 auto; }
+  .culture-grid { grid-template-columns:1fr 1fr; }
+  .pricing-layout { grid-template-columns:1fr; gap:36px; }
+  .p-card { grid-template-columns:1fr 1fr; }
+  .clients-grid { grid-template-columns:1fr 1fr; }
+  .about-layout { grid-template-columns:1fr; gap:48px; }
+  .gallery-grid { grid-template-columns:1fr 1fr; }
+  .gallery-item:first-child { grid-column:span 2; }
+}
+@media(max-width:540px) {
+  section { padding:60px 20px; }
+  .culture-grid { grid-template-columns:1fr; }
+  .clients-grid { grid-template-columns:1fr; }
+  .stats-grid { grid-template-columns:1fr 1fr; }
+  .p-card { grid-template-columns:1fr; gap:8px; }
+  .gallery-grid { grid-template-columns:1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-deco-line-left"></div>
+  <div class="hero-deco-line-right"></div>
+  <div class="hero-layout">
+    <div style="animation:fadeUp 0.8s ease both;">
+      <div class="hero-eyebrow">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-text">Производитель · Тюмень · Собственный пошив</span>
+      </div>
+      <h1 class="hero-title">ЗЛА<span>ТКА</span></h1>
+      <p class="hero-sub">Современные кокошники оптом</p>
+      <p class="hero-desc">Собственное производство в Тюмени. 10 базовых моделей, базовые в наличии. Для концертов, праздников, школ, домов культуры, маркетплейс-селлеров и корпоративных заказчиков.</p>
+      <div class="hero-btns">
+        <a href="#pricing" class="btn-marsala">Смотреть цены</a>
+        <a href="#contact" class="btn-outline">Оставить заявку</a>
+      </div>
+    </div>
+
+    <div class="hero-image-wrap" style="animation:fadeUp 0.8s 0.15s ease both;">
+      <div class="hero-image-frame">
+        <img src="model-red.png" alt="Кокошник ЗЛАТКА">
+      </div>
+      <div class="hero-image-corner" style="width:100px;height:100px;padding:0;overflow:hidden;">
+        <img src="matryoshka.png" alt="Матрёшка" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-inner">
+    <span class="strip-item">Русский культурный код</span><span class="strip-gem"> ◆ </span>
+    <span class="strip-item">9 Мая</span><span class="strip-gem"> ◆ </span>
+    <span class="strip-item">День России</span><span class="strip-gem"> ◆ </span>
+    <span class="strip-item">День города</span><span class="strip-gem"> ◆ </span>
+    <span class="strip-item">Городские праздники</span><span class="strip-gem"> ◆ </span>
+    <span class="strip-item">Концерты</span><span class="strip-gem"> ◆ </span>
+    <span class="strip-item">1 Сентября</span><span class="strip-gem"> ◆ </span>
+    <span class="strip-item">Новый год</span><span class="strip-gem"> ◆ </span>
+    <span class="strip-item">Масленица</span><span class="strip-gem"> ◆ </span>
+    <span class="strip-item">Выступления коллективов</span><span class="strip-gem"> ◆ </span>
+    <span class="strip-item">Русский культурный код</span><span class="strip-gem"> ◆ </span>
+    <span class="strip-item">9 Мая</span><span class="strip-gem"> ◆ </span>
+    <span class="strip-item">День России</span><span class="strip-gem"> ◆ </span>
+    <span class="strip-item">День города</span><span class="strip-gem"> ◆ </span>
+    <span class="strip-item">Городские праздники</span><span class="strip-gem"> ◆ </span>
+    <span class="strip-item">Концерты</span><span class="strip-gem"> ◆ </span>
+    <span class="strip-item">1 Сентября</span><span class="strip-gem"> ◆ </span>
+    <span class="strip-item">Новый год</span><span class="strip-gem"> ◆ </span>
+    <span class="strip-item">Масленица</span><span class="strip-gem"> ◆ </span>
+    <span class="strip-item">Выступления коллективов</span><span class="strip-gem"> ◆ </span>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="s-label">Коллекция</div>
+    <h2 class="s-title">Наши <em>кокошники</em></h2>
+    <p class="gallery-intro">10 базовых моделей. Базовые — в наличии. Изготовление в любом цвете и материале по запросу.</p>
+    <div class="gallery-grid">
+      <!-- ФОТО 1 (большое) -->
+      <div class="g-item">
+        <img src="model-red.png" alt="Кокошник ЗЛАТКА">
+        <div class="g-label">Модель классическая</div>
+      </div>
+      <!-- ФОТО 2 -->
+      <div class="g-item">
+        <img src="girl-kokoshnik.png" alt="Кокошник для школы">
+        <div class="g-label">Для школы и сада</div>
+      </div>
+      <!-- ФОТО 3 -->
+      <div class="g-item">
+        <img src="headband-bird.png" alt="Кокошник жар-птица">
+        <div class="g-label">Жар-птица</div>
+      </div>
+      <!-- ФОТО 4 -->
+      <div class="g-item">
+        <img src="headband-black.jpeg" alt="Кокошник чёрный">
+        <div class="g-label">Чёрный минимализм</div>
+      </div>
+      <!-- ФОТО 5 -->
+      <div class="g-item">
+        <img src="headband-red.jpeg" alt="Кокошник красный">
+        <div class="g-label">Красный классический</div>
+      </div>
+    </div>
+    <p class="gallery-hint">Загрузите фото в GitHub и замените заглушки на img-теги</p>
+  </div>
+</section>
+
+<!-- CULTURE -->
+<section class="culture">
+  <div class="container">
+    <div class="s-label">Тренд сезона</div>
+    <h2 class="s-title">Кокошник — это <em>культурный код</em>.<br>Быть в тренде.</h2>
+    <div class="culture-grid">
+      <div class="c-card">
+        <span class="c-icon">🎭</span>
+        <div class="c-name">Концерты и выступления</div>
+        <p class="c-text">Хоры, ансамбли, народные коллективы. Единый размер — подходит всем участникам.</p>
+      </div>
+      <div class="c-card">
+        <span class="c-icon">🏛️</span>
+        <div class="c-name">Государственные праздники</div>
+        <p class="c-text">9 Мая, День России, День города, городские праздники — кокошник как часть официального образа.</p>
+      </div>
+      <div class="c-card">
+        <span class="c-icon">🏫</span>
+        <div class="c-name">Школы и детские сады</div>
+        <p class="c-text">Утренники, 1 Сентября, новогодние постановки. Базовые модели всегда в наличии.</p>
+      </div>
+      <div class="c-card">
+        <span class="c-icon">🏢</span>
+        <div class="c-name">Корпоративные заказчики</div>
+        <p class="c-text">Администрации городов, организации, HR-отделы. Работаем с юрлицами — счёт, документы.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="s-label">Оптовые условия</div>
+    <h2 class="s-title">Цены для <em>организаций</em><br>и оптовых покупателей</h2>
+    <div class="pricing-layout">
+      <div class="pricing-side">
+        <p>Минимальный заказ — <strong>20 штук</strong>.</p>
+        <p>10 базовых моделей. Базовые — <strong>в наличии</strong>.</p>
+        <p>Любой цвет и материал — <strong>по запросу</strong>.</p>
+        <p>Упаковка — <strong>по запросу</strong>.</p>
+        <p>Срок — <strong>от 3 рабочих дней</strong>.</p>
+      </div>
+      <div class="p-cards">
+        <div class="p-card">
+          <div class="p-vol">от <strong>20 штук</strong></div>
+          <div class="p-tier">Старт</div>
+          <div class="p-price">280 <span>руб./шт.</span></div>
+        </div>
+        <div class="p-card featured">
+          <div class="p-vol">
+            <div class="p-popular">Популярный</div>
+            от <strong>50 штук</strong>
+          </div>
+          <div class="p-tier">Оптимальный</div>
+          <div class="p-price">260 <span>руб./шт.</span></div>
+        </div>
+        <div class="p-card">
+          <div class="p-vol">от <strong>100 штук</strong></div>
+          <div class="p-tier">Крупный опт</div>
+          <div class="p-price">240 <span>руб./шт.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="clients" id="clients">
+  <div class="container">
+    <div class="s-label">Наши клиенты</div>
+    <h2 class="s-title">Кто <em>работает</em> с нами</h2>
+    <div class="clients-grid">
+      <div class="cl-item">
+        <span class="cl-icon">🏫</span>
+        <div class="cl-name">Школы и детские сады</div>
+        <p class="cl-desc">Утренники, выступления, 1 Сентября, новогодние постановки</p>
+      </div>
+      <div class="cl-item">
+        <span class="cl-icon">🎭</span>
+        <div class="cl-name">Дома культуры</div>
+        <p class="cl-desc">Хоры, ансамбли, народные коллективы, концерты</p>
+      </div>
+      <div class="cl-item">
+        <span class="cl-icon">🏛️</span>
+        <div class="cl-name">Администрации городов</div>
+        <p class="cl-desc">Городские праздники, День города, 9 Мая, День России</p>
+      </div>
+      <div class="cl-item">
+        <span class="cl-icon">🎉</span>
+        <div class="cl-name">Event-агентства</div>
+        <p class="cl-desc">Тематические мероприятия, корпоративы в русском стиле</p>
+      </div>
+      <div class="cl-item">
+        <span class="cl-icon">📸</span>
+        <div class="cl-name">Фотостудии</div>
+        <p class="cl-desc">Реквизит для детских, семейных и тематических фотосессий</p>
+      </div>
+      <div class="cl-item">
+        <span class="cl-icon">🛍️</span>
+        <div class="cl-name">Селлеры маркетплейсов</div>
+        <p class="cl-desc">Поставки для продавцов на Wildberries, Ozon и других площадках</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="s-label">Производство</div>
+    <h2 class="s-title">Делаем сами —<br><em>в Тюмени</em></h2>
+    <div class="about-layout">
+      <div class="about-text">
+        <p>Собственное швейное производство в Тюмени. Не перепродаём — шьём сами. Прямые цены без наценки посредника.</p>
+        <p>10 базовых моделей, базовые — в наличии. Единый размер — универсальный, подходит и взрослым, и детям. Изготовление в любом цвете и материале по вашему запросу.</p>
+        <div class="about-list">
+          <div class="about-li">Работаем с ИП и юридическими лицами</div>
+          <div class="about-li">Оплата по счёту, все закрывающие документы</div>
+          <div class="about-li">Доставка по всей России — СДЭК, Почта, ТК</div>
+          <div class="about-li">Срок изготовления — от 3 рабочих дней</div>
+          <div class="about-li">Любой цвет и материал — по запросу</div>
+        </div>
+      </div>
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-num">10</div>
+          <div class="stat-label">базовых моделей</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">20</div>
+          <div class="stat-label">мин. заказ, шт.</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">3</div>
+          <div class="stat-label">дня от заявки</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">∞</div>
+          <div class="stat-label">цветов и материалов</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="s-label">Связаться с нами</div>
+    <h2 class="s-title">Оставьте заявку —<br>ответим <em>сегодня</em></h2>
+    <div class="contact-grid">
+      <div class="ct-card">
+        <span class="ct-icon">📞</span>
+        <div class="ct-label">Telegram / MAX</div>
+        <div class="ct-value">+7 909 186-29-48</div>
+      </div>
+      <div class="ct-card">
+        <span class="ct-icon">✉️</span>
+        <div class="ct-label">Email</div>
+        <div class="ct-value">rastvorenie72@gmail.com</div>
+      </div>
+      <div class="ct-card">
+        <span class="ct-icon">📍</span>
+        <div class="ct-label">Производство</div>
+        <div class="ct-value">г. Тюмень</div>
+      </div>
+    </div>
+    <p class="contact-note">
+      Минимальный заказ — 20 штук · Работаем с физлицами, ИП и организациями<br>
+      Счёт на оплату · Закрывающие документы · Доставка по всей России
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 ЗЛАТКА · Собственное производство кокошников · г. Тюмень</p>
+</footer>
+
+</body>
+</html>
